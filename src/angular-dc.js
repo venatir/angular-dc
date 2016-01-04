@@ -66,8 +66,12 @@ angularDc.directive('dcChart', ['$timeout',
             // If we have a dc-name attribute, we populate the scope with the chart
             // object dc-name
             if ('name' in options) {
-                scope[options.name] = chart;
+                if (!scope.hasOwnProperty('dcCharts')) {
+                    scope.dcCharts = {};
+                }
+                scope.dcCharts[options.name] = chart;
                 options.name = undefined;
+                scope.$broadcast('newChartRegistered', chart);
             }
             // Configure the chart based on options
             chart.options(options);
