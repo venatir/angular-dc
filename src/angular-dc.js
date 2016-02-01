@@ -253,3 +253,5 @@ angularDc.directive('dcSelect', [
         };
     }
 ]);
+
+angularDc.originaldc = dc;

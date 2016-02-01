@@ -237,6 +237,7 @@
             }
         };
     }]);
+    angularDc.originaldc = dc;
     return angularDc;
 
 }));
