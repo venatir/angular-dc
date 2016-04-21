@@ -71,7 +71,7 @@ angularDc.directive('dcChart', ['$timeout',
                 }
                 scope.dcCharts[options.name] = chart;
                 options.name = undefined;
-                scope.$broadcast('newChartRegistered', chart);
+                scope.$root.$broadcast('newChartRegistered', chart);
             }
             // Configure the chart based on options
             chart.options(options);
